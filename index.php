@@ -10,9 +10,9 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				background-color: monospace;
+				background-color: black;
 				color: white;
-				font-family: sans-serif;
+				font-family: monospace;
 				flex-direction: column;
 				margin: 0;
 				font-size: 10vmin;
@@ -42,8 +42,8 @@
 			const d = document.getElementById("d");
 			const h = document.querySelector("h1");
 			var count = 0;
-			u.onclick = function(){count++; h.innerText = count;};
-			d.onclick = function(){count--; h.innerText = count;};
+			u.onclick = function(e){e.preventDefault(); count++; h.innerText = count;};
+			d.onclick = function(e){e.preventDefault(); count--; h.innerText = count;};
 		</script>
 	</body>
 </html>
