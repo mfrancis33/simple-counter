@@ -40,6 +40,8 @@
 				font-size: inherit;
 				font-weight: bold;
 				border: 0;
+				color: black;
+				cursor: pointer;
 			}
 			#u {
 				background-color: lime;
