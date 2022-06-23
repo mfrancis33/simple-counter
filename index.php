@@ -2,28 +2,44 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<!-- Prevents user from zooming on mobile. While yes, a terrible thing on most sites, there shouldn't be any need here -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>Counter</title>
 		<style>
 			body {
 				width: 100vw;
 				height: 100vh;
+				margin: 0;
+				
+				background-color: black;
+				color: white;
+				font-size: 10vmin;
+				font-family: monospace;
+
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+				align-items: stretch;
+				justify-content: center;
+			}
+			h1 {
+				margin: 0;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				background-color: black;
-				color: white;
-				font-family: monospace;
-				flex-direction: column;
-				margin: 0;
-				font-size: 10vmin;
 			}
+
+			@media screen and (orientation: landscape) {
+				body {
+					grid-template-rows: 1fr;
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+			}
+
 			button {
-				width: 20vmin;
-				height: 20vmin;
-				font-size: 10vmin;
+				font-size: inherit;
 				font-weight: bold;
 				border: 0;
-				border-radius: 50%;
 			}
 			#u {
 				background-color: lime;
@@ -34,9 +50,9 @@
 		</style>
 	</head>
 	<body>
-		<button id="u">&uarr;</button>
+		<button id="u">&plus;</button>
 		<h1>0</h1>
-		<button id="d">&darr;</button>
+		<button id="d">&minus;</button>
 		<script>
 			const u = document.getElementById("u");
 			const d = document.getElementById("d");
